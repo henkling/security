@@ -23,7 +23,10 @@ resource "aws_cloudtrail" "foobar" {
 resource "aws_s3_bucket" "foo" {
   bucket        = "tf-test-trail"
   force_destroy = true
-
+  logging {
+    target_bucket = aws_s3_bucket.log_bucket.id
+    target_prefix = "log/"
+  }
   policy = <<POLICY
 {
     "Version": "2012-10-17",
