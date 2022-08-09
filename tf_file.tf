@@ -21,6 +21,10 @@ resource "aws_cloudtrail" "foobar" {
 }
 
 resource "aws_s3_bucket" "foo" {
+  logging {
+target_bucket = aws_s3_bucket.<your_logging_s3_bucket>.id
+target_prefix = "log/"
+}
   bucket        = "tf-test-trail"
   force_destroy = true
 
