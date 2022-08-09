@@ -13,7 +13,7 @@ terraform {
 
 data "aws_caller_identity" "current" {}
 
-resource "aws_cloudtrail" "foobar33" {
+resource "aws_cloudtrail" "foobar" {
   name                          = "tf-trail-foobar"
   s3_bucket_name                = aws_s3_bucket.foo.id
   s3_key_prefix                 = "prefix"
@@ -21,10 +21,6 @@ resource "aws_cloudtrail" "foobar33" {
 }
 
 resource "aws_s3_bucket" "foo" {
-  logging {
-       target_bucket = aws_s3_bucket.your_logging_s3_bucket.id
-       target_prefix = "log/"
-}
   bucket        = "tf-test-trail"
   force_destroy = true
 
