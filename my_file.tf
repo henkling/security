@@ -13,7 +13,7 @@ terraform {
 
 data "aws_caller_identity" "current" {}
 
-resource "aws_cloudtrail" "foobar12" {
+
   kms_key_id = "arn:aws:kms:<Your KMS Key>"
   name                          = "tf-trail-foobar"
   s3_bucket_name                = aws_s3_bucket.foo.id
