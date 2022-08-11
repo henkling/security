@@ -45,6 +45,7 @@ POLICY
 }
 
 resource "aws_cloudtrail" "foobar" {
+  kms_key_id = "arn:aws:kms:<Your KMS Key>"
   name                          = "tf-trail-foobar"
   s3_bucket_name                = aws_s3_bucket.foo.id
   s3_key_prefix                 = "prefix"
