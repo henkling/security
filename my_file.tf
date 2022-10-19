@@ -21,7 +21,7 @@ resource "aws_cloudtrail" "foobar" {
   include_global_service_events = false
 }
 
-resource "aws_s3_bucket" "foo" {
+resource "aws_s3_bucket" "foo1" {
   bucket        = "tf-test-trail"
   force_destroy = true
 
