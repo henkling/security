@@ -11,7 +11,7 @@ terraform {
   }
 }
 
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current22" {}
 
 resource "aws_cloudtrail" "foobar" {
   kms_key_id = "arn:aws:kms:<Your KMS Key>"
