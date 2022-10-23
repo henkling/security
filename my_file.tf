@@ -11,7 +11,7 @@ terraform {
   }
 }
 
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current227" {}
 
 resource "aws_cloudtrail" "foobar" {
   kms_key_id = "arn:aws:kms:<Your KMS Key>"
@@ -21,7 +21,7 @@ resource "aws_cloudtrail" "foobar" {
   include_global_service_events = false
 }
 
-resource "aws_s3_bucket" "foo" {
+resource "aws_s3_bucket" "foo1" {
   bucket        = "tf-test-trail"
   force_destroy = true
 
